@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui02CollectionView.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Loaded="ContentPage_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button
+            x:Name="BtnAdd"
+            Margin="10,0"
+            Clicked="BtnAdd_Clicked"
+            Text="Add new player" />
+        <CollectionView
+            x:Name="CtvPlayers"
+            Grid.Row="1"
+            ItemsSource="{Binding Players}"
+            SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                        <Frame
+                            Margin="10"
+                            BackgroundColor="Black"
+                            CornerRadius="14">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Frame.GestureRecognizers>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Frame
+                                    Grid.RowSpan="2"
+                                    Margin="0,0,10,0"
+                                    Padding="0"
+                                    BorderColor="Gray"
+                                    CornerRadius="70"
+                                    HeightRequest="60"
+                                    HorizontalOptions="Start"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="60">
+                                    <Image
+                                        Aspect="AspectFill"
+                                        HeightRequest="60"
+                                        HorizontalOptions="Center"
+                                        Source="{Binding ProfileImage}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="60" />
+                                </Frame>
+                                <Label
+                                    Grid.Column="1"
+                                    FontAttributes="Bold"
+                                    Text="{Binding FirstName}"
+                                    TextColor="White" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontAttributes="Italic"
+                                    Text="{Binding LastName}"
+                                    TextColor="White" />
+                                <Image
+                                    Grid.RowSpan="2"
+                                    Grid.Column="2"
+                                    HeightRequest="60"
+                                    HorizontalOptions="End"
+                                    Source="{Binding CountryFlag}"
+                                    WidthRequest="60" />
+                            </Grid>
+                        </Frame>
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

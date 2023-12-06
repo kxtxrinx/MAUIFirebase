@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Maui02CollectionView.AddPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:inputs="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
+    Title="AddPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Button
+            x:Name="BtnSave"
+            Grid.ColumnSpan="3"
+            Margin="10,0"
+            Clicked="BtnSave_Clicked"
+            Text="Guardar" />
+        <Label
+            x:Name="LblFirstName"
+            Grid.Row="1"
+            HorizontalOptions="End"
+            Text="Nombre:"
+            VerticalOptions="Center" />
+        <Entry
+            x:Name="EntFirstName"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="10,5"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center" />
+        <Label
+            x:Name="LblLastName"
+            Grid.Row="2"
+            HorizontalOptions="End"
+            Text="Apellidos:"
+            VerticalOptions="Center" />
+        <Entry
+            x:Name="EntLastName"
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="10,5"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center" />
+        <Label
+            x:Name="LblProfileImage"
+            Grid.Row="3"
+            HorizontalOptions="End"
+            Text="Imagen perfil:"
+            VerticalOptions="Center" />
+        <Entry
+            x:Name="EntProfileImage"
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="10,5"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center" />
+        <Label
+            x:Name="LblPlayerImage"
+            Grid.Row="4"
+            HorizontalOptions="End"
+            Text="Imagen jugador:"
+            VerticalOptions="Center" />
+        <Entry
+            x:Name="EntPlayerImage"
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="10,5"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center" />
+        <Label
+            x:Name="LblCountry"
+            Grid.Row="5"
+            HorizontalOptions="End"
+            Text="País:"
+            VerticalOptions="Center" />
+        <inputs:SfComboBox
+            x:Name="CmbCountry"
+            Grid.Row="5"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="10,5"
+            HeightRequest="50"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="Center" />
+    </Grid>
+</ContentPage>
